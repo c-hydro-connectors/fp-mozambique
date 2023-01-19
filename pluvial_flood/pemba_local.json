@@ -1,0 +1,37 @@
+{
+  "algorithm": {
+    "flags": {
+      "clean_ancillary": true
+    },
+    "template": {
+      "frc_subpath_time": "%Y/%m/%d/",
+      "frc_file_time": "%Y%m%d",
+      "time_run": "%H"
+    }
+  },
+  "data": {
+    "time_delta": [24,48,72],
+    "location": {
+      "pemba": [40.5,-13.0]
+    },
+    "forecast": {
+      "folder": "/home/andrea/Desktop/test_pemba/",
+      "filename": "mozambique_gfs.t{time_run}z.0p25.{frc_file_time}_srf_rain.nc",
+      "varname" : "tp",
+      "resolution": 0.25
+    },
+    "ancillary": {
+      "__note__": "ref_no varies from 0 (the location), then 1 (ne) up to 8 (clockwise)",
+      "folder": "/home/andrea/Desktop/test_pemba/ancillary",
+      "filename": "{frc_file_time}.t{time_run}_{location}_timeseries.txt"
+    },
+    "output": {
+      "folder": "/home/andrea/Desktop/test_pemba/output/{frc_subpath_time}",
+      "filename": "{frc_file_time}.t{time_run}_{location}_max{time_delta}.txt"
+    },
+    "log": {
+      "folder": "/home/andrea/Desktop/test_pemba/",
+      "filename": "test.txt"
+    }
+  }
+}
